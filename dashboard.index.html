@@ -1,0 +1,1250 @@
+<!doctype html>
+<html class="h-full bg-white" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <link href="src/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/807acfa91f.js"></script>
+</head>
+
+
+<body class="h-full bg-slate-100">
+<div class="bg-slate-100">
+    <!--
+      This example requires updating your template:
+
+      ```
+      <html class="h-full bg-white">
+      <body class="h-full">
+      ```
+    -->
+
+    <el-dialog>
+        <dialog id="sidebar" class="backdrop:bg-transparent lg:hidden"
+                style="right: var(--el-top-layer-scrollbar-offset, 0px);">
+            <el-dialog-backdrop
+                    class="fixed inset-0 bg-slate-900/80 transition-opacity duration-300 ease-linear data-closed:opacity-0"
+                    inert=""></el-dialog-backdrop>
+
+            <div tabindex="0" class="fixed inset-0 flex focus:outline-none">
+                <el-dialog-panel
+                        class="group/dialog-panel relative mr-16 flex w-full max-w-xs flex-1 transform transition duration-300 ease-in-out data-closed:-translate-x-full">
+                    <div class="absolute top-0 left-full flex w-16 justify-center pt-5 duration-300 ease-in-out group-data-closed/dialog-panel:opacity-0">
+                        <button type="button" command="close" commandfor="sidebar" class="-m-2.5 p-2.5"
+                                aria-expanded="false">
+                            <span class="sr-only">Close sidebar</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 data-slot="icon" aria-hidden="true" class="size-6 text-white">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Sidebar component, swap this element with another sidebar if you like -->
+                    <div class="relative flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6    focus:outline-none">
+                        <div class="relative flex h-16 shrink-0 items-center">
+                            <img src="https://cdn.prod.website-files.com/664cfafd1b780dd90b9bc416/68a7b899eb604ec798b4d0e1_fa_horizontal_text_purple_orange.png"
+                                 alt="Your Company" class="h-10 w-auto">
+                        </div>
+                        <!-- Avatar User Profile with Dropdown -->
+                        <el-dropdown class="relative group block  pb-4">
+                            <button class="flex justify-between items-center w-full cursor-pointer" id="menu-button-22" type="button" aria-haspopup="menu" aria-controls="menu-21" aria-expanded="false" popovertarget="menu-21">
+                                <div class="inline-flex items-center">
+                                    <div id="user-profie">
+                                        <img alt=""
+                                             class="inline-block size-11 rounded-full"
+                                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"/>
+                                    </div>
+                                    <div class="ml-3 text-left">
+                                        <p class="text-sm font-semibold text-slate-600 hover:text-slate-900">Sean Bobby</p>
+                                        <!--<p class="text-sm font-medium text-slate-500 group-hover:text-slate-700">Title of User</p>-->
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <svg class="group size-6 text-slate-400 hover:text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </button>
+
+                            <el-menu anchor="bottom end" class="w-56 origin-top-right divide-y font-medium text-left divide-slate-100 rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in" popover="manual" id="menu-21" aria-labelledby="menu-button-22" role="menu">
+                                <div class="py-1">
+                                    <a class="block px-4 py-2 text-sm text-slate-800 hover:text-indigo-500 hover:bg-slate-100 focus:text-slate-800 focus:outline-hidden" href="#" id="item-23" role="menuitem" tabindex="-1">Manage Profile</a>
+                                </div>
+
+                                <div class="py-1 font-semibold text-slate-900 text-xs">
+                                    <p class="block px-4 mt-2 ">Location: <span class="text-slate-500">Denver, CO US</span></p>
+                                    <p class="block px-4 py-2">IP: <span class="text-slate-500">867.53.09.09</span></p>
+                                </div>
+                            </el-menu>
+                        </el-dropdown>
+                        <nav class="relative flex flex-1 flex-col">
+                            <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                                <ul>
+                                    <ul role="list" class="-mx-2 space-y-1">
+                                        <li>
+                                            <a href="#"
+                                               class="group flex gap-x-3 justify-between w-full rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                                <div class="flex items-center gap-x-3">
+                                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+
+                                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                        <path d="m10.875 6.375.563-1.125 1.125-.562-1.125-.563L10.875 3l-.562 1.125-1.125.563 1.125.562z" opacity=".4"/>
+                                                        <path fill="#475569" d="M5.813 8.625 6.75 6.75l1.875-.937-1.875-.938L5.813 3l-.938 1.875L3 5.813l1.875.937z" opacity=".4"/>
+                                                        <path d="M18.188 13.125 17.25 15l-1.875.938 1.875.937.938 1.875.937-1.875L21 15.938 19.125 15z" opacity=".4"/>
+                                                        <path d="M16.892 3c.288 0 .576.11.795.33l2.983 2.983c.44.439.44 1.151 0 1.59L7.904 20.67a1.121 1.121 0 0 1-1.591 0L3.33 17.687a1.125 1.125 0 0 1 0-1.59L16.096 3.33c.22-.22.508-.33.796-.33Zm0 2.319-3.045 3.044 1.79 1.79 3.044-3.045-1.79-1.79Z" opacity=".8"/>
+                                                    </svg>
+                                                    First Time Setup
+                                                </div>
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <circle cx="12" cy="12" r="3" fill="#818CF8" fill-rule="evenodd"/>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <!-- Current: "bg-slate-10 text-indigo-500", Default: "text-slate-600 hover:text-indigo-500 hover:bg-slate-100" -->
+
+                                            <a href="#"
+                                               class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M5 12.321c2.334-2.009 4.666-4.017 7-6.03l7.003 6.033.013 6.192c0 .68-.56 1.234-1.25 1.234H15.25c-.69 0-1.25-.55-1.25-1.23v-2.717a.991.991 0 0 0-1-.984h-2c-.553 0-1 .44-1 .984v2.717c0 .68-.56 1.23-1.25 1.23H6.253c-.69 0-1.25-.55-1.25-1.23L5 12.32Z"
+                                                          opacity=".4"/>
+                                                    <path d="M11.34 4.243c.379-.323.941-.323 1.32 0l8 6.89a.976.976 0 0 1 .093 1.391c-.362.41-.997.45-1.412.092L12 6.292l-7.34 6.324a1.014 1.014 0 0 1-1.413-.092.974.974 0 0 1 .094-1.39l8-6.891Z"
+                                                          opacity=".8"/>
+                                                    </path>
+                                                </svg>
+                                                Dashboard
+                                            </a>
+                                        </li>
+
+                                        <li>
+
+                                            <a href="#"
+                                               class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-600 hover:bg-slate-100 hover:text-indigo-500">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M12.92 11.373c.57.58 1.358.94 2.23.94 1.74 0 3.15-1.432 3.15-3.2 0-1.768-1.41-3.199-3.15-3.199-.697 0-1.342.231-1.865.62.33.634.515 1.357.515 2.122a4.595 4.595 0 0 1-.88 2.717Zm1.617 2.773a5.737 5.737 0 0 1 1.963 4.336v.229c0 .334-.087.645-.242.914h3.876a.87.87 0 0 0 .863-.877c.003-2.545-2.028-4.607-4.534-4.607h-1.726c-.068 0-.135.002-.2.005Z"
+                                                          opacity=".4"/>
+                                                    <path d="M9.3 12.313c1.988 0 3.6-1.637 3.6-3.657C12.9 6.637 11.288 5 9.3 5S5.7 6.637 5.7 8.656c0 2.02 1.612 3.656 3.6 3.656Zm-1.285 1.37c-2.77 0-5.015 2.28-5.015 5.094 0 .468.374.848.835.848h10.93c.46 0 .835-.38.835-.848 0-2.814-2.244-5.093-5.015-5.093h-2.57Z"
+                                                          opacity=".8"/>
+                                                </svg>
+                                                Users
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M4 11.875c0 .29.169.55.434.67l6.832 3.108a1.755 1.755 0 0 0 1.469 0l6.83-3.107a.735.735 0 0 0 0-1.342l-1.662-.756-4.75 2.16a2.793 2.793 0 0 1-2.306 0l-4.75-2.16-1.663.756a.735.735 0 0 0-.434.671Z"
+                                                          opacity=".4"/>
+                                                    <path d="M11.266 4.16a1.773 1.773 0 0 1 1.468 0l6.832 3.107a.735.735 0 0 1 0 1.341l-6.832 3.107a1.773 1.773 0 0 1-1.468 0L4.434 8.608A.741.741 0 0 1 4 7.938c0-.287.169-.551.434-.671l6.832-3.107Zm6.637 10.225 1.663.757a.735.735 0 0 1 0 1.341l-6.832 3.107a1.773 1.773 0 0 1-1.468 0l-6.832-3.107a.741.741 0 0 1-.434-.67c0-.287.169-.551.434-.671l1.663-.757 4.75 2.16a2.793 2.793 0 0 0 2.306 0l4.75-2.16Z"
+                                                          opacity=".8"/>
+                                                </svg>
+                                                Applications
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M5.125 8.323c.165.095.345.172.534.221a2.008 2.008 0 0 0 .44.074c.024 0 .049.003.077.003h.078c.41 0 .794-.109 1.125-.302v7.351a2.17 2.17 0 0 0-.535-.221 2.008 2.008 0 0 0-.44-.074c-.024 0-.049-.004-.077-.004H6.25c-.411 0-.795.11-1.125.303V8.323ZM8.198 5.25h7.35a2.17 2.17 0 0 0-.22.534 2.008 2.008 0 0 0-.074.44c0 .024-.004.049-.004.077v.078c0 .41.109.794.302 1.125h-7.35a2.17 2.17 0 0 0 .22-.535 2.008 2.008 0 0 0 .074-.44c0-.024.004-.049.004-.077v-.077c0-.411-.109-.795-.302-1.125Zm0 11.25h7.35a2.17 2.17 0 0 0-.22.534 2.008 2.008 0 0 0-.074.44c0 .024-.004.049-.004.077v.078c0 .41.109.794.302 1.125h-7.35a2.17 2.17 0 0 0 .22-.535 2.008 2.008 0 0 0 .074-.44c0-.024.004-.049.004-.077v-.077c0-.411-.109-.795-.302-1.125Zm8.177-8.177c.165.095.345.172.534.221a2.008 2.008 0 0 0 .44.074c.024 0 .049.003.077.003h.078c.41 0 .794-.109 1.125-.302v7.351a2.17 2.17 0 0 0-.535-.221 2.008 2.008 0 0 0-.44-.074c-.024 0-.049-.004-.077-.004H17.5c-.411 0-.795.11-1.125.303V8.323Z"
+                                                          opacity=".4"/>
+                                                    <path d="M4 6.375a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Zm2.25 9a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm11.25 0a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm0-11.25a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Z"
+                                                          opacity=".8"/>
+                                                </svg>
+                                                Groups
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M5 4.688C5 3.756 5.756 3 6.688 3h10.125c.931 0 1.687.756 1.687 1.688v14.625c0 .931-.756 1.687-1.688 1.687h-3.375v-2.813a1.688 1.688 0 0 0-3.374 0V21H6.687A1.688 1.688 0 0 1 5 19.312V4.688Zm2.25 2.25v1.125c0 .309.253.562.563.562h1.125c.309 0 .562-.253.562-.563V6.938a.564.564 0 0 0-.563-.563H7.813a.564.564 0 0 0-.563.563Zm0 4.5v1.124c0 .31.253.563.563.563h1.125c.309 0 .562-.253.562-.563v-1.124a.564.564 0 0 0-.563-.563H7.813a.564.564 0 0 0-.563.563Zm3.375-4.5v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm0 4.5v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563ZM14 6.938v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm0 4.5v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Z"
+                                                          opacity=".8"/>
+                                                    <path d="M7.813 6.375a.564.564 0 0 0-.563.563v1.125c0 .309.253.562.563.562h1.125c.309 0 .562-.253.562-.563V6.938a.564.564 0 0 0-.563-.563H7.813Zm0 4.5a.564.564 0 0 0-.563.563v1.124c0 .31.253.563.563.563h1.125c.309 0 .562-.253.562-.563v-1.124a.564.564 0 0 0-.563-.563H7.813Zm3.375 0a.564.564 0 0 0-.563.563v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124Zm2.812.563v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm-3.375-4.5v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm3.938-.563a.564.564 0 0 0-.563.563v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124Z"
+                                                          opacity=".1"/>
+                                                </svg>
+                                                Tenants
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M10.312 12a1.688 1.688 0 1 0 3.375 0 1.688 1.688 0 0 0-3.375 0Z"
+                                                          opacity=".4"/>
+                                                    <path d="M9.187 12c0-1.04.566-1.951 1.407-2.436L8.062 5.18c-.309-.538-1.005-.728-1.5-.352a9 9 0 0 0-3.492 6.05C2.993 11.494 3.503 12 4.125 12h5.062Zm1.407 2.436-2.532 4.388c-.309.538-.13 1.234.443 1.473A8.976 8.976 0 0 0 12 21c1.237 0 2.422-.25 3.495-.703.573-.243.752-.935.442-1.473l-2.53-4.388c-.416.24-.894.376-1.407.376s-.991-.137-1.406-.376ZM14.812 12h5.063c.622 0 1.132-.506 1.055-1.122a9 9 0 0 0-3.491-6.05c-.496-.376-1.189-.186-1.502.352l-2.53 4.384A2.812 2.812 0 0 1 14.811 12Z"
+                                                          opacity=".8"/>
+                                                </svg>
+                                                Reactor
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button" command="--toggle" commandfor="mobile-sub-menu-1"
+                                                    class="group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                                    aria-expanded="false" aria-controls="mobile-sub-menu-1">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M3 5.723c0-.44.172-.883.513-1.219C3.853 4.17 4.303 4 4.75 4c.447 0 .897.17 1.237.504l4.085 4.021-2.475 2.436-4.085-4.02A1.708 1.708 0 0 1 3 5.723Zm9.081 11.317 4.166-4.1c1.572.338 2.753 1.716 2.753 3.365 0 .12-.006.24-.019.357-.056.538.319 1.12.869 1.12H20c.553 0 1 .44 1 .984a.991.991 0 0 1-1 .984h-4.5c-1.675 0-3.078-1.16-3.419-2.71Z"
+                                                          opacity=".4"/>
+                                                    <path d="m15.834 4.594-1.762 1.735 3.562 3.506 1.763-1.734a1.946 1.946 0 0 0 0-2.784l-.731-.723a2.022 2.022 0 0 0-2.829 0h-.003Zm-2.468 2.43-7.963 7.841c-.21.206-.362.465-.444.744l-.928 3.2a.73.73 0 0 0 .19.726c.195.19.476.261.738.187l3.25-.913c.288-.08.547-.231.757-.437l7.962-7.841-3.562-3.507Z"
+                                                          opacity=".8"/>
+                                                </svg>
+                                                Customizations
+                                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                                    <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                                          clip-rule="evenodd" fill-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <el-disclosure id="mobile-sub-menu-1" class="contents" hidden=".8">
+                                                <ul class="mt-1 px-2">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Email
+                                                            Templates</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Forms</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Form
+                                                            Fields</a>
+                                                    </li>
+                                                </ul>
+                                            </el-disclosure>
+                                        </li>
+                                        <li>
+                                            <button type="button" command="--toggle" commandfor="mobile-sub-menu-2"
+                                                    class="group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                                    aria-expanded="false" aria-controls="mobile-sub-menu-2">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <<path d="M3 15.857v2.572A2.574 2.574 0 0 0 5.571 21H18.43A2.574 2.574 0 0 0 21 18.429v-2.572a2.574 2.574 0 0 0-2.571-2.571H5.57A2.574 2.574 0 0 0 3 15.857Zm12.214 1.286c0 .534-.43.964-.964.964a.962.962 0 0 1-.964-.964c0-.535.43-.964.964-.964s.964.43.964.964Zm3.215 0c0 .534-.43.964-.965.964a.962.962 0 0 1-.964-.964c0-.535.43-.964.964-.964.535 0 .965.43.965.964Z" opacity=".8"/>
+                                                    <path d="M5.571 3A2.574 2.574 0 0 0 3 5.571v2.572a2.574 2.574 0 0 0 2.571 2.571H18.43A2.574 2.574 0 0 0 21 8.143V5.57A2.574 2.574 0 0 0 18.429 3H5.57Zm8.679 2.893c.534 0 .964.43.964.964 0 .535-.43.964-.964.964a.962.962 0 0 1-.964-.964c0-.534.43-.964.964-.964Zm2.25.964c0-.534.43-.964.964-.964.535 0 .965.43.965.964 0 .535-.43.964-.965.964a.962.962 0 0 1-.964-.964Z" opacity=".6"/>
+                                                </svg>
+                                                Entity Management
+                                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                     aria-hidden="true"
+                                                     class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                                    <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                                          clip-rule="evenodd" fill-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <el-disclosure id="mobile-sub-menu-2" class="contents" hidden=".8">
+                                                <ul class="mt-1 px-2">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Email
+                                                            Templates</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Forms</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Form
+                                                            Fields</a>
+                                                    </li>
+                                                </ul>
+                                            </el-disclosure>
+                                        </li>
+                                        <li>
+                                            <button type="button" command="--toggle" commandfor="mobile-sub-menu-3"
+                                                    class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                                    aria-expanded="false" aria-controls="mobile-sub-menu-3">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M9.75 12a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 0 0-4.5 0Z" opacity=".4"/>
+                                                    <path d="M20.213 9.722a.796.796 0 0 0 .225-.865 8.714 8.714 0 0 0-.556-1.206l-.165-.285a8.946 8.946 0 0 0-.777-1.096.796.796 0 0 0-.861-.24l-1.959.623a6.91 6.91 0 0 0-1.547-.897l-.439-2.007a.795.795 0 0 0-.64-.626 9.084 9.084 0 0 0-2.988 0 .795.795 0 0 0-.64.626l-.44 2.007a6.765 6.765 0 0 0-1.546.893l-1.958-.622a.802.802 0 0 0-.862.239c-.285.345-.545.71-.777 1.097l-.165.285c-.214.386-.4.787-.555 1.206a.796.796 0 0 0 .225.864l1.522 1.386a6.802 6.802 0 0 0 0 1.79l-1.522 1.384a.796.796 0 0 0-.225.865c.154.418.34.82.555 1.206l.165.285c.232.386.492.752.777 1.096a.796.796 0 0 0 .862.24l1.958-.623c.47.362.991.665 1.547.893l.439 2.008c.07.32.316.573.64.625a9.084 9.084 0 0 0 2.988 0 .795.795 0 0 0 .64-.625l.44-2.008a6.765 6.765 0 0 0 1.546-.893l1.959.623c.309.098.653.01.86-.24.286-.344.546-.71.778-1.096l.165-.285c.215-.387.4-.788.556-1.206a.796.796 0 0 0-.225-.865l-1.523-1.385a6.802 6.802 0 0 0 0-1.786l1.523-1.385ZM12 8.625a3.375 3.375 0 1 1 0 6.75 3.375 3.375 0 0 1 0-6.75Z" opacity=".8"/>
+                                                </svg>
+                                                Settings
+                                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                                    <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                                          clip-rule="evenodd" fill-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <el-disclosure id="mobile-sub-menu-3" hidden=".8" class="contents">
+                                                <ul class="mt-1 px-2">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                            Templates</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                                    </li>
+                                                </ul>
+                                            </el-disclosure>
+                                        </li>
+                                        <li>
+                                            <button type="button" command="--toggle" commandfor="mobile-sub-menu-4"
+                                                    class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                                    aria-expanded="false" aria-controls="mobile-sub-menu-4">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M9.714 5.813c0-.932.768-1.688 1.715-1.688h1.142c.947 0 1.715.756 1.715 1.688v12.375c0 .931-.768 1.687-1.715 1.687H11.43c-.947 0-1.715-.756-1.715-1.688V5.813Z" opacity=".4"/>
+                                                    <path d="M17.143 6.375c-.947 0-1.714.756-1.714 1.688v10.124c0 .932.767 1.688 1.714 1.688h1.143c.946 0 1.714-.756 1.714-1.688V8.063c0-.931-.768-1.687-1.714-1.687h-1.143Zm-11.429 4.5c-.946 0-1.714.756-1.714 1.688v5.624c0 .932.768 1.688 1.714 1.688h1.143c.947 0 1.714-.756 1.714-1.688v-5.625c0-.931-.767-1.687-1.714-1.687H5.714Z" opacity=".8"/>
+                                                </svg>
+                                                Reports
+                                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                                    <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                                          clip-rule="evenodd" fill-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <el-disclosure id="mobile-sub-menu-4" hidden=".8" class="contents">
+                                                <ul class="mt-1 px-2">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                            Templates</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                                    </li>
+                                                </ul>
+                                            </el-disclosure>
+                                        </li>
+                                        <li>
+                                            <button type="button" command="--toggle" commandfor="mobile-sub-menu-5"
+                                                    class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                                    aria-expanded="false" aria-controls="mobile-sub-menu-5">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                    <path d="M6.286 5.25C6.286 4.009 7.31 3 8.57 3h5.715v4.5c0 .622.51 1.125 1.143 1.125H20V18.75c0 1.241-1.025 2.25-2.286 2.25H8.571c-1.26 0-2.285-1.009-2.285-2.25v-4.5h2.328l1.479 2.907c.15.3.464.479.803.464a.855.855 0 0 0 .761-.53l1.579-3.882.289.57a.865.865 0 0 0 .768.467h2a.848.848 0 0 0 .857-.843.848.848 0 0 0-.857-.844H14.82l-.907-1.782a.854.854 0 0 0-.803-.464.855.855 0 0 0-.761.53l-1.579 3.882-.86-1.695a.865.865 0 0 0-.768-.467H6.286V5.25Z" opacity=".4"/>
+                                                    <path d="M20 8.625 14.286 3v4.5c0 .622.51 1.125 1.143 1.125H20Zm-6.09 2.155a.854.854 0 0 0-.803-.464.855.855 0 0 0-.76.53l-1.576 3.879-.86-1.695a.865.865 0 0 0-.768-.467H4.857a.848.848 0 0 0-.857.843c0 .468.382.844.857.844h3.757l1.479 2.907c.15.3.464.479.803.464a.855.855 0 0 0 .761-.53l1.579-3.882.289.57a.865.865 0 0 0 .768.467h2a.848.848 0 0 0 .857-.843.848.848 0 0 0-.857-.844H14.82l-.907-1.782-.003.003Z" opacity=".9"/>
+                                                </svg>
+                                                System
+                                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                                     class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                                    <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                                          clip-rule="evenodd" fill-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                            <el-disclosure id="mobile-sub-menu-5" hidden=".8" class="contents">
+                                                <ul class="mt-1 px-2">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                            Templates</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#"
+                                                           class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                                    </li>
+                                                </ul>
+                                            </el-disclosure>
+                                        </li>
+                                    </ul>
+                                </ul>
+                                <li class="-mx-6 mt-auto">
+
+                                    <!-- Callout Widget -->
+                                    <div class="rounded-md bg-sky-50 border border-sky-200 p-4 mx-6 ">
+                                        <div class="flex justify-between">
+                                            <div class="shrink-0">
+                                                <svg class="h-5 w-5 -mx-1.5 -my-1.5" viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true">
+                                                    <path fill="#C7D2FE" d="M0 7.5c0 3.515 2.91 6.364 6.5 6.364S13 11.014 13 7.5c0-3.515-2.91-6.364-6.5-6.364S0 3.986 0 7.5Zm4.875-.199c0-.33.272-.596.61-.596h1.218c.338 0 .61.266.61.596V9.49h.203c.337 0 .609.266.609.596 0 .33-.272.597-.61.597h-2.03a.602.602 0 0 1-.61-.597c0-.33.272-.596.61-.596h.609V7.898h-.61a.602.602 0 0 1-.609-.597Zm2.438-2.187c0 .439-.364.795-.813.795a.804.804 0 0 1-.813-.795c0-.44.364-.796.813-.796.449 0 .813.356.813.796Z" opacity=".8"></path>
+                                                    <path fill="#615FFF" fill-rule="nonzero" d="M6.5 4.318c.449 0 .813.356.813.796 0 .439-.364.795-.813.795a.804.804 0 0 1-.813-.795c0-.44.364-.796.813-.796ZM4.875 7.301c0-.33.272-.596.61-.596h1.218c.338 0 .61.266.61.596V9.49h.203c.337 0 .609.266.609.596 0 .33-.272.597-.61.597h-2.03a.602.602 0 0 1-.61-.597c0-.33.272-.596.61-.596h.609V7.898h-.61a.602.602 0 0 1-.609-.597Z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="ml-4">
+                                                <p class="text-xs font-medium slate-700">Get more from FusionAuth</p>
+                                                <a href="" <p class="text-xs font-medium text-indigo-500">Get a Free License</p></a>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <div class="-mx-1.5 -my-1.5">
+                                                    <button class="inline-flex rounded-md bg-sky-50 p-[0.5] text-sky-500 hover:bg-sky-100 focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 focus:ring-offset-sky-50 focus:outline-hidden" type="button">
+                                                        <span class="sr-only">Dismiss</span>
+                                                        <svg aria-hidden="true" class="size-5" data-slot="icon" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <li>
+                                        <a href="#"
+                                           class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-600 hover:bg-slate-100 hover:text-indigo-500">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon"
+                                                 aria-hidden="true"
+                                                 class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                                <path d="M3 7.375v8.999a3.376 3.376 0 0 0 3.375 3.374h2.25a1.124 1.124 0 1 0 0-2.25h-2.25a1.124 1.124 0 0 1-1.125-1.124v-9c0-.622.502-1.124 1.125-1.124h2.25a1.124 1.124 0 1 0 0-2.25h-2.25A3.376 3.376 0 0 0 3 7.375Z" opacity=".4"/>
+                                                <path d="M20.752 11.277a.84.84 0 0 1 0 1.191l-5.062 5.066a.845.845 0 0 1-1.441-.598v-2.812h-3.937a1.688 1.688 0 0 1-1.688-1.687v-1.125c0-.932.756-1.688 1.688-1.688h3.937V6.812a.842.842 0 0 1 1.441-.597l5.062 5.062Z" opacity=".8"/>
+                                            </svg>
+                                            Logout
+                                        </a>
+                                    </li>
+
+                                    <div class="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold border-t-1 border-slate-200">
+                                        <div class="flex-auto">
+                                            <div class="items-baseline justify-between gap-x-4">
+                                                <p class="text-sm/6 text-gray-700">FusionAuth 2025</p>
+                                                <p class="flex-none font-medium text-gray-400">FusionAuth version
+                                                    1.57.1</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </ul>
+                        </nav>
+                    </div>
+                </el-dialog-panel>
+            </div>
+        </dialog>
+    </el-dialog>
+
+    <!-- Static sidebar for desktop -->
+    <div class="hidden bg-white lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+        <div class="relative flex flex-col border-r border-b border-slate-200 bg-white px-6 ">
+            <div id="Logo & User Profile" class="relative flex h-16 shrink-0 items-center sticky top-0 left-0 z-9999 bg-white w-full  ">
+                <img src="https://cdn.prod.website-files.com/664cfafd1b780dd90b9bc416/68a7b899eb604ec798b4d0e1_fa_horizontal_text_purple_orange.png"
+                     alt="FusionAuth" class="h-10 w-auto">
+            </div>
+            <!-- Avatar User Profile with Dropdown -->
+            <el-dropdown class="relative group block pt-5 pb-4">
+                <button class="flex justify-between items-center w-full cursor-pointer" id="menu-button-22" type="button" aria-haspopup="menu" aria-controls="menu-21" aria-expanded="false" popovertarget="menu-21">
+                    <div class="inline-flex items-center">
+                        <div id="user-profie">
+                            <img alt=""
+                                 class="inline-block size-11 rounded-full"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"/>
+                        </div>
+                        <div class="ml-3 text-left">
+                            <p class="text-sm font-semibold text-slate-600 hover:text-slate-900">Sean Bobby</p>
+                            <!--<p class="text-sm font-medium text-slate-500 group-hover:text-slate-700">Title of User</p>-->
+                        </div>
+                    </div>
+                    <div class="">
+                        <svg class="group size-6 text-slate-400 hover:text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </button>
+
+                <el-menu anchor="bottom end" class="w-56 origin-top-right divide-y font-medium text-left divide-slate-100 rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in" popover="manual" id="menu-21" aria-labelledby="menu-button-22" role="menu">
+                    <div class="py-1">
+                        <a class="block px-4 py-2 text-sm text-slate-900 hover:text-indigo-500 hover:bg-slate-100 focus:text-slate-900 focus:outline-hidden" href="#" id="item-23" role="menuitem" tabindex="-1">Manage Profile</a>
+                    </div>
+
+                    <div class="py-1 font-semibold text-slate-900 text-xs">
+                        <p class="block px-4 mt-2 ">Location: <span class="text-slate-500">Denver, CO US</span></p>
+                        <p class="block px-4 py-2">IP: <span class="text-slate-500">867.53.09.09</span></p>
+                    </div>
+                </el-menu>
+            </el-dropdown>
+        </div>
+
+
+
+        <div class="relative flex grow flex-col gap-y-5 overflow-y-auto border-r border-slate-200 bg-white px-6 pt-5">
+            <nav class="relative flex flex-1 flex-col">
+                <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                    <li>
+                        <ul role="list" class="-mx-2 space-y-1">
+                            <li>
+                                <a href="#"
+                                   class="group flex gap-x-3 justify-between w-full rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <div class="flex items-center gap-x-3">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="m10.875 6.375.563-1.125 1.125-.562-1.125-.563L10.875 3l-.562 1.125-1.125.563 1.125.562z" opacity=".4"/>
+                                        <path fill="#475569" d="M5.813 8.625 6.75 6.75l1.875-.937-1.875-.938L5.813 3l-.938 1.875L3 5.813l1.875.937z" opacity=".4"/>
+                                        <path d="M18.188 13.125 17.25 15l-1.875.938 1.875.937.938 1.875.937-1.875L21 15.938 19.125 15z" opacity=".4"/>
+                                        <path d="M16.892 3c.288 0 .576.11.795.33l2.983 2.983c.44.439.44 1.151 0 1.59L7.904 20.67a1.121 1.121 0 0 1-1.591 0L3.33 17.687a1.125 1.125 0 0 1 0-1.59L16.096 3.33c.22-.22.508-.33.796-.33Zm0 2.319-3.045 3.044 1.79 1.79 3.044-3.045-1.79-1.79Z" opacity=".8"/>
+                                    </svg>
+                                    First Time Setup
+                                    </div>
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <circle cx="12" cy="12" r="3" fill="#818CF8" fill-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Current: "bg-slate-100", Default: "hover:bg-slate-100" Desktop-->
+                                <a href="#"
+                                   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M5 12.321c2.334-2.009 4.666-4.017 7-6.03l7.003 6.033.013 6.192c0 .68-.56 1.234-1.25 1.234H15.25c-.69 0-1.25-.55-1.25-1.23v-2.717a.991.991 0 0 0-1-.984h-2c-.553 0-1 .44-1 .984v2.717c0 .68-.56 1.23-1.25 1.23H6.253c-.69 0-1.25-.55-1.25-1.23L5 12.32Z"
+                                              opacity=".4"/>
+                                        <path d="M11.34 4.243c.379-.323.941-.323 1.32 0l8 6.89a.976.976 0 0 1 .093 1.391c-.362.41-.997.45-1.412.092L12 6.292l-7.34 6.324a1.014 1.014 0 0 1-1.413-.092.974.974 0 0 1 .094-1.39l8-6.891Z"
+                                              opacity=".8"/>
+                                    </svg>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M12.92 11.373c.57.58 1.358.94 2.23.94 1.74 0 3.15-1.432 3.15-3.2 0-1.768-1.41-3.199-3.15-3.199-.697 0-1.342.231-1.865.62.33.634.515 1.357.515 2.122a4.595 4.595 0 0 1-.88 2.717Zm1.617 2.773a5.737 5.737 0 0 1 1.963 4.336v.229c0 .334-.087.645-.242.914h3.876a.87.87 0 0 0 .863-.877c.003-2.545-2.028-4.607-4.534-4.607h-1.726c-.068 0-.135.002-.2.005Z"
+                                              opacity=".4"/>
+                                        <path d="M9.3 12.313c1.988 0 3.6-1.637 3.6-3.657C12.9 6.637 11.288 5 9.3 5S5.7 6.637 5.7 8.656c0 2.02 1.612 3.656 3.6 3.656Zm-1.285 1.37c-2.77 0-5.015 2.28-5.015 5.094 0 .468.374.848.835.848h10.93c.46 0 .835-.38.835-.848 0-2.814-2.244-5.093-5.015-5.093h-2.57Z"
+                                              opacity=".8"/>
+                                    </svg>
+                                    Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M4 11.875c0 .29.169.55.434.67l6.832 3.108a1.755 1.755 0 0 0 1.469 0l6.83-3.107a.735.735 0 0 0 0-1.342l-1.662-.756-4.75 2.16a2.793 2.793 0 0 1-2.306 0l-4.75-2.16-1.663.756a.735.735 0 0 0-.434.671Z"
+                                              opacity=".4"/>
+                                        <path d="M11.266 4.16a1.773 1.773 0 0 1 1.468 0l6.832 3.107a.735.735 0 0 1 0 1.341l-6.832 3.107a1.773 1.773 0 0 1-1.468 0L4.434 8.608A.741.741 0 0 1 4 7.938c0-.287.169-.551.434-.671l6.832-3.107Zm6.637 10.225 1.663.757a.735.735 0 0 1 0 1.341l-6.832 3.107a1.773 1.773 0 0 1-1.468 0l-6.832-3.107a.741.741 0 0 1-.434-.67c0-.287.169-.551.434-.671l1.663-.757 4.75 2.16a2.793 2.793 0 0 0 2.306 0l4.75-2.16Z"
+                                              opacity=".8"/>
+                                    </svg>
+                                    Applications
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M5.125 8.323c.165.095.345.172.534.221a2.008 2.008 0 0 0 .44.074c.024 0 .049.003.077.003h.078c.41 0 .794-.109 1.125-.302v7.351a2.17 2.17 0 0 0-.535-.221 2.008 2.008 0 0 0-.44-.074c-.024 0-.049-.004-.077-.004H6.25c-.411 0-.795.11-1.125.303V8.323ZM8.198 5.25h7.35a2.17 2.17 0 0 0-.22.534 2.008 2.008 0 0 0-.074.44c0 .024-.004.049-.004.077v.078c0 .41.109.794.302 1.125h-7.35a2.17 2.17 0 0 0 .22-.535 2.008 2.008 0 0 0 .074-.44c0-.024.004-.049.004-.077v-.077c0-.411-.109-.795-.302-1.125Zm0 11.25h7.35a2.17 2.17 0 0 0-.22.534 2.008 2.008 0 0 0-.074.44c0 .024-.004.049-.004.077v.078c0 .41.109.794.302 1.125h-7.35a2.17 2.17 0 0 0 .22-.535 2.008 2.008 0 0 0 .074-.44c0-.024.004-.049.004-.077v-.077c0-.411-.109-.795-.302-1.125Zm8.177-8.177c.165.095.345.172.534.221a2.008 2.008 0 0 0 .44.074c.024 0 .049.003.077.003h.078c.41 0 .794-.109 1.125-.302v7.351a2.17 2.17 0 0 0-.535-.221 2.008 2.008 0 0 0-.44-.074c-.024 0-.049-.004-.077-.004H17.5c-.411 0-.795.11-1.125.303V8.323Z"
+                                              opacity=".4"/>
+                                        <path d="M4 6.375a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Zm2.25 9a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm11.25 0a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm0-11.25a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Z"
+                                              opacity=".8"/>
+                                    </svg>
+                                    Groups
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M5 4.688C5 3.756 5.756 3 6.688 3h10.125c.931 0 1.687.756 1.687 1.688v14.625c0 .931-.756 1.687-1.688 1.687h-3.375v-2.813a1.688 1.688 0 0 0-3.374 0V21H6.687A1.688 1.688 0 0 1 5 19.312V4.688Zm2.25 2.25v1.125c0 .309.253.562.563.562h1.125c.309 0 .562-.253.562-.563V6.938a.564.564 0 0 0-.563-.563H7.813a.564.564 0 0 0-.563.563Zm0 4.5v1.124c0 .31.253.563.563.563h1.125c.309 0 .562-.253.562-.563v-1.124a.564.564 0 0 0-.563-.563H7.813a.564.564 0 0 0-.563.563Zm3.375-4.5v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm0 4.5v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563ZM14 6.938v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm0 4.5v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Z"
+                                              opacity=".8"/>
+                                        <path d="M7.813 6.375a.564.564 0 0 0-.563.563v1.125c0 .309.253.562.563.562h1.125c.309 0 .562-.253.562-.563V6.938a.564.564 0 0 0-.563-.563H7.813Zm0 4.5a.564.564 0 0 0-.563.563v1.124c0 .31.253.563.563.563h1.125c.309 0 .562-.253.562-.563v-1.124a.564.564 0 0 0-.563-.563H7.813Zm3.375 0a.564.564 0 0 0-.563.563v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124Zm2.812.563v1.124c0 .31.253.563.563.563h1.124c.31 0 .563-.253.563-.563v-1.124a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm-3.375-4.5v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124a.564.564 0 0 0-.563.563Zm3.938-.563a.564.564 0 0 0-.563.563v1.125c0 .309.253.562.563.562h1.124c.31 0 .563-.253.563-.563V6.938a.564.564 0 0 0-.563-.563h-1.124Z"
+                                              opacity=".1"/>
+                                    </svg>
+                                    Tenants
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M10.312 12a1.688 1.688 0 1 0 3.375 0 1.688 1.688 0 0 0-3.375 0Z"
+                                              opacity=".4"/>
+                                        <path d="M9.187 12c0-1.04.566-1.951 1.407-2.436L8.062 5.18c-.309-.538-1.005-.728-1.5-.352a9 9 0 0 0-3.492 6.05C2.993 11.494 3.503 12 4.125 12h5.062Zm1.407 2.436-2.532 4.388c-.309.538-.13 1.234.443 1.473A8.976 8.976 0 0 0 12 21c1.237 0 2.422-.25 3.495-.703.573-.243.752-.935.442-1.473l-2.53-4.388c-.416.24-.894.376-1.407.376s-.991-.137-1.406-.376ZM14.812 12h5.063c.622 0 1.132-.506 1.055-1.122a9 9 0 0 0-3.491-6.05c-.496-.376-1.189-.186-1.502.352l-2.53 4.384A2.812 2.812 0 0 1 14.811 12Z"
+                                              opacity=".8"/>
+                                    </svg>
+                                    Reactor
+                                </a>
+                            </li>
+                            <li>
+                                <button type="button" command="--toggle" commandfor="sub-menu-1"
+                                        class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                        aria-expanded="false" aria-controls="sub-menu-1">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500 ">
+                                        <path d="M3 5.723c0-.44.172-.883.513-1.219C3.853 4.17 4.303 4 4.75 4c.447 0 .897.17 1.237.504l4.085 4.021-2.475 2.436-4.085-4.02A1.708 1.708 0 0 1 3 5.723Zm9.081 11.317 4.166-4.1c1.572.338 2.753 1.716 2.753 3.365 0 .12-.006.24-.019.357-.056.538.319 1.12.869 1.12H20c.553 0 1 .44 1 .984a.991.991 0 0 1-1 .984h-4.5c-1.675 0-3.078-1.16-3.419-2.71Z"
+                                              opacity=".4"/>
+                                        <path d="m15.834 4.594-1.762 1.735 3.562 3.506 1.763-1.734a1.946 1.946 0 0 0 0-2.784l-.731-.723a2.022 2.022 0 0 0-2.829 0h-.003Zm-2.468 2.43-7.963 7.841c-.21.206-.362.465-.444.744l-.928 3.2a.73.73 0 0 0 .19.726c.195.19.476.261.738.187l3.25-.913c.288-.08.547-.231.757-.437l7.962-7.841-3.562-3.507Z"
+                                              opacity=".8"/>
+                                    </svg>
+                                    Customizations
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                        <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                              clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <el-disclosure id="sub-menu-1" class="contents" hidden=".8">
+                                    <ul class="mt-1 px-2">
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Email
+                                                Templates</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Forms</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Form
+                                                Fields</a>
+                                        </li>
+                                    </ul>
+                                </el-disclosure>
+                            </li>
+                            <li>
+                                <button type="button" command="--toggle" commandfor="sub-menu-2"
+                                        class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                        aria-expanded="false" aria-controls="sub-menu-2">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M3 15.857v2.572A2.574 2.574 0 0 0 5.571 21H18.43A2.574 2.574 0 0 0 21 18.429v-2.572a2.574 2.574 0 0 0-2.571-2.571H5.57A2.574 2.574 0 0 0 3 15.857Zm12.214 1.286c0 .534-.43.964-.964.964a.962.962 0 0 1-.964-.964c0-.535.43-.964.964-.964s.964.43.964.964Zm3.215 0c0 .534-.43.964-.965.964a.962.962 0 0 1-.964-.964c0-.535.43-.964.964-.964.535 0 .965.43.965.964Z" opacity=".4"/>
+                                        <path d="M5.571 3A2.574 2.574 0 0 0 3 5.571v2.572a2.574 2.574 0 0 0 2.571 2.571H18.43A2.574 2.574 0 0 0 21 8.143V5.57A2.574 2.574 0 0 0 18.429 3H5.57Zm8.679 2.893c.534 0 .964.43.964.964 0 .535-.43.964-.964.964a.962.962 0 0 1-.964-.964c0-.534.43-.964.964-.964Zm2.25.964c0-.534.43-.964.964-.964.535 0 .965.43.965.964 0 .535-.43.964-.965.964a.962.962 0 0 1-.964-.964Z" opacity=".8"/>
+                                    </svg>
+                                    Entity Management
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                        <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                              clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <el-disclosure id="sub-menu-2" hidden=".8" class="contents">
+                                    <ul class="mt-1 px-2">
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                Templates</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                        </li>
+                                    </ul>
+                                </el-disclosure>
+                            </li>
+
+                            <li>
+                                <button type="button" command="--toggle" commandfor="sub-menu-3"
+                                        class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                        aria-expanded="false" aria-controls="sub-menu-3">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M9.75 12a2.25 2.25 0 1 0 4.5 0 2.25 2.25 0 0 0-4.5 0Z" opacity=".4"/>
+                                        <path d="M20.213 9.722a.796.796 0 0 0 .225-.865 8.714 8.714 0 0 0-.556-1.206l-.165-.285a8.946 8.946 0 0 0-.777-1.096.796.796 0 0 0-.861-.24l-1.959.623a6.91 6.91 0 0 0-1.547-.897l-.439-2.007a.795.795 0 0 0-.64-.626 9.084 9.084 0 0 0-2.988 0 .795.795 0 0 0-.64.626l-.44 2.007a6.765 6.765 0 0 0-1.546.893l-1.958-.622a.802.802 0 0 0-.862.239c-.285.345-.545.71-.777 1.097l-.165.285c-.214.386-.4.787-.555 1.206a.796.796 0 0 0 .225.864l1.522 1.386a6.802 6.802 0 0 0 0 1.79l-1.522 1.384a.796.796 0 0 0-.225.865c.154.418.34.82.555 1.206l.165.285c.232.386.492.752.777 1.096a.796.796 0 0 0 .862.24l1.958-.623c.47.362.991.665 1.547.893l.439 2.008c.07.32.316.573.64.625a9.084 9.084 0 0 0 2.988 0 .795.795 0 0 0 .64-.625l.44-2.008a6.765 6.765 0 0 0 1.546-.893l1.959.623c.309.098.653.01.86-.24.286-.344.546-.71.778-1.096l.165-.285c.215-.387.4-.788.556-1.206a.796.796 0 0 0-.225-.865l-1.523-1.385a6.802 6.802 0 0 0 0-1.786l1.523-1.385ZM12 8.625a3.375 3.375 0 1 1 0 6.75 3.375 3.375 0 0 1 0-6.75Z" opacity=".8"/>
+                                    </svg>
+                                    Settings
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                        <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                              clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <el-disclosure id="sub-menu-3" hidden=".8" class="contents">
+                                    <ul class="mt-1 px-2">
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                Templates</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                        </li>
+                                    </ul>
+                                </el-disclosure>
+                            </li>
+
+                            <li>
+                                <button type="button" command="--toggle" commandfor="sub-menu-4"
+                                        class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                        aria-expanded="false" aria-controls="sub-menu-4">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M9.714 5.813c0-.932.768-1.688 1.715-1.688h1.142c.947 0 1.715.756 1.715 1.688v12.375c0 .931-.768 1.687-1.715 1.687H11.43c-.947 0-1.715-.756-1.715-1.688V5.813Z" opacity=".4"/>
+                                        <path d="M17.143 6.375c-.947 0-1.714.756-1.714 1.688v10.124c0 .932.767 1.688 1.714 1.688h1.143c.946 0 1.714-.756 1.714-1.688V8.063c0-.931-.768-1.687-1.714-1.687h-1.143Zm-11.429 4.5c-.946 0-1.714.756-1.714 1.688v5.624c0 .932.768 1.688 1.714 1.688h1.143c.947 0 1.714-.756 1.714-1.688v-5.625c0-.931-.767-1.687-1.714-1.687H5.714Z" opacity=".8"/>
+                                    </svg>
+                                    Reports
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                        <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                              clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <el-disclosure id="sub-menu-4" hidden=".8" class="contents">
+                                    <ul class="mt-1 px-2">
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                Templates</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                        </li>
+                                    </ul>
+                                </el-disclosure>
+                            </li>
+
+                            <li>
+                                <button type="button" command="--toggle" commandfor="sub-menu-5"
+                                        class=" group flex w-full items-center gap-x-3 rounded-md p-2 text-left text-sm/6 font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-500"
+                                        aria-expanded="false" aria-controls="sub-menu-5">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="size-6 shrink-0 text-slate-400 group-hover:text-indigo-500">
+                                        <path d="M6.286 5.25C6.286 4.009 7.31 3 8.57 3h5.715v4.5c0 .622.51 1.125 1.143 1.125H20V18.75c0 1.241-1.025 2.25-2.286 2.25H8.571c-1.26 0-2.285-1.009-2.285-2.25v-4.5h2.328l1.479 2.907c.15.3.464.479.803.464a.855.855 0 0 0 .761-.53l1.579-3.882.289.57a.865.865 0 0 0 .768.467h2a.848.848 0 0 0 .857-.843.848.848 0 0 0-.857-.844H14.82l-.907-1.782a.854.854 0 0 0-.803-.464.855.855 0 0 0-.761.53l-1.579 3.882-.86-1.695a.865.865 0 0 0-.768-.467H6.286V5.25Z" opacity=".4"/>
+                                        <path d="M20 8.625 14.286 3v4.5c0 .622.51 1.125 1.143 1.125H20Zm-6.09 2.155a.854.854 0 0 0-.803-.464.855.855 0 0 0-.76.53l-1.576 3.879-.86-1.695a.865.865 0 0 0-.768-.467H4.857a.848.848 0 0 0-.857.843c0 .468.382.844.857.844h3.757l1.479 2.907c.15.3.464.479.803.464a.855.855 0 0 0 .761-.53l1.579-3.882.289.57a.865.865 0 0 0 .768.467h2a.848.848 0 0 0 .857-.843.848.848 0 0 0-.857-.844H14.82l-.907-1.782-.003.003Z" opacity=".9"/>
+                                    </svg>
+                                    System
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                         class="ml-auto size-5 shrink-0 not-in-aria-expanded:text-slate-400 in-aria-expanded:rotate-90 in-aria-expanded:text-slate-500">
+                                        <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                              clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <el-disclosure id="sub-menu-5" hidden=".8" class="contents">
+                                    <ul class="mt-1 px-2">
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Lambdas</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Message
+                                                Templates</a>
+                                        </li>
+                                        <li>
+                                            <!-- 44px -->
+                                            <a href="#"
+                                               class="block rounded-md py-2 pr-2 pl-9 text-sm/6 font-medium text-slate-500 hover:bg-slate-100 hover:text-indigo-500">Themes</a>
+                                        </li>
+                                    </ul>
+                                </el-disclosure>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="-mx-6 mt-auto">
+
+                        <!-- Callout Widget -->
+                        <div class="rounded-md bg-sky-50 border border-sky-200 p-4 mx-6 mb-6">
+                            <div class="flex justify-between">
+                                <div>
+                                    <svg class="h-5 w-5 -mx-1.5 -my-1.5" viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true">
+                                        <path fill="#C7D2FE" d="M0 7.5c0 3.515 2.91 6.364 6.5 6.364S13 11.014 13 7.5c0-3.515-2.91-6.364-6.5-6.364S0 3.986 0 7.5Zm4.875-.199c0-.33.272-.596.61-.596h1.218c.338 0 .61.266.61.596V9.49h.203c.337 0 .609.266.609.596 0 .33-.272.597-.61.597h-2.03a.602.602 0 0 1-.61-.597c0-.33.272-.596.61-.596h.609V7.898h-.61a.602.602 0 0 1-.609-.597Zm2.438-2.187c0 .439-.364.795-.813.795a.804.804 0 0 1-.813-.795c0-.44.364-.796.813-.796.449 0 .813.356.813.796Z" opacity=".8"></path>
+                                        <path fill="#615FFF" fill-rule="nonzero" d="M6.5 4.318c.449 0 .813.356.813.796 0 .439-.364.795-.813.795a.804.804 0 0 1-.813-.795c0-.44.364-.796.813-.796ZM4.875 7.301c0-.33.272-.596.61-.596h1.218c.338 0 .61.266.61.596V9.49h.203c.337 0 .609.266.609.596 0 .33-.272.597-.61.597h-2.03a.602.602 0 0 1-.61-.597c0-.33.272-.596.61-.596h.609V7.898h-.61a.602.602 0 0 1-.609-.597Z"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-xs font-medium slate-700">Get more from FusionAuth</p>
+                                    <a href="" <p class="text-xs font-medium text-indigo-500">Get a Free License</p></a>
+                                </div>
+                                <div class="ml-auto">
+                                    <div class="-mx-1.5 -my-1.5">
+                                        <button class="inline-flex rounded-md bg-sky-50 p-[0.5] text-sky-500 hover:bg-sky-100 focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 focus:ring-offset-sky-50 focus:outline-hidden" type="button">
+                                            <span class="sr-only">Dismiss</span>
+                                            <svg aria-hidden="true" class="size-5" data-slot="icon" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold border-t-1 border-slate-200">
+                            <div class="flex-auto">
+                                <div class="items-baseline justify-between gap-x-4">
+                                    <p class="text-sm/6 text-gray-700">FusionAuth 2025</p>
+                                    <p class="flex-none font-medium text-gray-400">FusionAuth version 1.57.1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+    <!-- Dashboard content -->
+    <div class="lg:pl-72">
+
+        <!-- Search header -->
+        <div class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-slate-200 bg-white px-4 shadow-xs sm:gap-x-6 sm:px-6 lg:px-8">
+            <button type="button" command="show-modal" commandfor="sidebar"
+                    class="-m-2.5 p-2.5 text-slate-600 hover:text-slate-900 lg:hidden" aria-expanded="false">
+                <span class="sr-only">Open sidebar</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                     aria-hidden="true" class="size-6">
+                    <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                </svg>
+            </button>
+
+            <!-- Separator -->
+            <div aria-hidden="true" class="h-6 w-px bg-slate-200 lg:hidden"></div>
+
+            <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
+                <form action="#" method="GET" class="grid flex-1 grid-cols-1">
+                    <input name="search" placeholder="Search" aria-label="Search"
+                           class="col-start-1 row-start-1 block size-full bg-white pl-8 text-base text-slate-900 outline-hidden placeholder:text-slate-400 sm:text-sm/6">
+                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                         class="pointer-events-none col-start-1 row-start-1 size-5 self-center text-slate-400">
+                        <path d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+                              clip-rule="evenodd" fill-rule="evenodd"></path>
+                    </svg>
+                </form>
+                <div class="flex items-center gap-x-4 lg:gap-x-6">
+
+                    <!-- Profile dropdown -->
+                    <!--<button type="button" class="-m-2.5 p-2.5 text-slate-400 hover:text-slate-500">
+                        <span class="sr-only">View notifications</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                            <path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>-->
+
+                    <!-- Separator -->
+                    <!--<div aria-hidden="true" class="hidden lg:block lg:h-6 lg:w-px lg:bg-slate-200"></div>-->
+
+                    <!-- Profile dropdown -->
+                    <!--<el-dropdown class="relative" style="--button-width: 144.1328125px;">
+                        <button class="relative flex items-center" id="menu-button-1" type="button" aria-haspopup="menu" aria-controls="menu-0" aria-expanded="false" popovertarget="menu-0">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">Open user menu</span>
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="size-8 rounded-full bg-slate-50 outline -outline-offset-1 outline-black/5">
+                            <span class="hidden lg:flex lg:items-center">
+                <span aria-hidden="true" class="ml-4 text-sm/6 font-semibold text-slate-900">Tom Cook</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="ml-2 size-5 text-slate-400">
+                  <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+              </span>
+                        </button>
+                        <el-menu anchor="bottom end" popover="manual" class="w-32 origin-top-right rounded-md bg-white py-2 shadow-lg outline-1 outline-slate-900/5 transition transition-discrete [--anchor-gap:--spacing(2.5)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in" id="menu-0" aria-labelledby="menu-button-1" role="menu" tabindex="0" style="left: calc(1120.0071961669923px + var(--anchor-offset, 0px)); top: calc(47.54261112213135px + var(--anchor-gap, 0px)); position: absolute;">
+                            <a href="#" class="block px-3 py-1 text-sm/6 text-slate-900 focus:bg-slate-50 focus:outline-hidden" id="item-2" role="menuitem" tabindex="-1">Your profile</a>
+                            <a href="#" class="block px-3 py-1 text-sm/6 text-slate-900 focus:bg-slate-50 focus:outline-hidden" id="item-3" role="menuitem" tabindex="-1">Sign out</a>
+                        </el-menu>
+                    </el-dropdown>-->
+
+
+                </div>
+            </div>
+        </div>
+
+        <main class="py-6">
+            <!-- Breadcrumbs -->
+            <nav aria-label="Breadcrumb" class="flex px-4 sm:px-6 lg:px-8">
+                <ol class="flex items-center space-x-2" role="list">
+                    <li>
+                        <div>
+                            <a class="text-slate-400 hover:text-indigo-600" href="#">
+                                <svg aria-hidden="true" class="size-5 shrink-0" data-slot="icon" fill="currentColor"
+                                     viewBox="0 0 20 20">
+                                    <path clip-rule="evenodd"
+                                          d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+                                          fill-rule="evenodd"></path>
+                                </svg>
+                                <span class="sr-only">Home</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg aria-hidden="true" class="size-5 shrink-0 text-slate-400" data-slot="icon"
+                                 fill="currentColor" viewBox="0 0 20 20">
+                                <path clip-rule="evenodd"
+                                      d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                      fill-rule="evenodd"></path>
+                            </svg>
+                            <a class="ml-4 text-sm font-medium text-slate-500 hover:text-indigo-600"
+                               href="#">Feature</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg aria-hidden="true" class="size-5 shrink-0 text-slate-400" data-slot="icon"
+                                 fill="currentColor" viewBox="0 0 20 20">
+                                <path clip-rule="evenodd"
+                                      d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                      fill-rule="evenodd"></path>
+                            </svg>
+                            <a aria-current="page" class="ml-4 text-sm font-medium text-slate-900 cursor-default"
+                               href="#">Feature Page 2</a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+            <!-- Header Text -->
+            <h1 class="text-3xl font-medium tracking-tight text-slate-900 px-4 mt-6 sm:px-6 lg:px-8">Users</h1>
+            <!-- Main content -->
+            <div class="px-4 sm:px-6 lg:px-8 py-6">
+                <div class="relative h-[576px] overflow-hidden bg-white rounded-xl border py-8 px-8  border-solid border-slate-300">
+                    <!-- Input with label + tooltip -->
+                    <div class="flex-row items-center border-slate-100 pb-3 rounded-md">
+                        <div class="mx-auto w-full ">
+                            <div>
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <label class="block text-xs font-medium text-slate-900" for="email">Email</label>
+                                    <svg class="h-5 w-5" viewBox="0 0 16 16" fill="currentColor" data-slot="icon"
+                                         aria-hidden="true" class="text-indigo-600">
+                                        <path fill="#C7D2FE"
+                                              d="M0 7.5c0 3.515 2.91 6.364 6.5 6.364S13 11.014 13 7.5c0-3.515-2.91-6.364-6.5-6.364S0 3.986 0 7.5Zm4.875-.199c0-.33.272-.596.61-.596h1.218c.338 0 .61.266.61.596V9.49h.203c.337 0 .609.266.609.596 0 .33-.272.597-.61.597h-2.03a.602.602 0 0 1-.61-.597c0-.33.272-.596.61-.596h.609V7.898h-.61a.602.602 0 0 1-.609-.597Zm2.438-2.187c0 .439-.364.795-.813.795a.804.804 0 0 1-.813-.795c0-.44.364-.796.813-.796.449 0 .813.356.813.796Z"
+                                              opacity=".8"/>
+                                        <path fill="#615FFF" fill-rule="nonzero"
+                                              d="M6.5 4.318c.449 0 .813.356.813.796 0 .439-.364.795-.813.795a.804.804 0 0 1-.813-.795c0-.44.364-.796.813-.796ZM4.875 7.301c0-.33.272-.596.61-.596h1.218c.338 0 .61.266.61.596V9.49h.203c.337 0 .609.266.609.596 0 .33-.272.597-.61.597h-2.03a.602.602 0 0 1-.61-.597c0-.33.272-.596.61-.596h.609V7.898h-.61a.602.602 0 0 1-.609-.597Z"/>
+                                    </svg>
+                                </div>
+                                <div class="mb-1">
+                                    <input class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-slate-900 outline-1 -outline-offset-1 outline-slate-300 placeholder:text-slate-400 placeholder:text-sm focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                                           id="email" name="email"
+                                           placeholder="you@example.com"
+                                           type="email">
+                                </div>
+                                <div class="mt-8 flow-root">
+                                    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                            <table class="min-w-full divide-y divide-slate-300">
+                                                <thead>
+                                                <tr>
+                                                    <th class="py-3.5 pr-3 pl-4 text-left text-sm font-semibold text-slate-900 sm:pl-0"
+                                                        scope="col">
+                                                        Name
+                                                    </th>
+                                                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-slate-900"
+                                                        scope="col">Title
+                                                    </th>
+                                                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-slate-900"
+                                                        scope="col">Email
+                                                    </th>
+                                                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-slate-900"
+                                                        scope="col">Role
+                                                    </th>
+                                                    <th class="px-3 py-3.5 text-right text-sm font-semibold text-slate-900"
+                                                        scope="col">Action
+                                                    </th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody class="divide-y divide-slate-200">
+                                                <tr>
+                                                    <td class="py-3 pr-3 pl-4 text-sm whitespace-nowrap sm:pl-0">
+                                                        <div class="flex items-center">
+                                                            <div class="size-9 shrink-0">
+                                                                <img alt="" class="size-9 rounded-full"
+                                                                     src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80">
+                                                            </div>
+                                                            <div class="ml-4">
+                                                                <div class=" text-slate-700">lindsay.walton@example.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Front-end
+                                                        Developer
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">
+                                                        lindsay.walton@example.com
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Member</td>
+                                                    <td class="relative py-4 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
+
+                                                        <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+                                                        <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+                                                        <el-dropdown class="inline-block">
+                                                            <button class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-xs inset-ring-1 inset-ring-slate-300 hover:bg-slate-100">
+                                                                Select
+                                                                <svg aria-hidden="true" class="-mr-1 size-5 text-slate-400" data-slot="icon"
+                                                                     fill="currentColor" viewBox="0 0 20 20">
+                                                                    <path clip-rule="evenodd"
+                                                                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" fill-rule="evenodd"/>
+                                                                </svg>
+                                                            </button>
+
+                                                            <el-menu anchor="bottom end" class="w-56 origin-top-right divide-y font-medium text-left divide-slate-100 rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                                                                     popover>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Edit</a>
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Duplicate</a>
+                                                                </div>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Archive</a>
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Move</a>
+                                                                </div>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Share</a>
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Add
+                                                                        to favorites</a>
+                                                                </div>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Delete</a>
+                                                                </div>
+                                                            </el-menu>
+                                                        </el-dropdown>
+
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-3 pr-3 pl-4 text-sm whitespace-nowrap sm:pl-0">
+                                                        <div class="flex items-center">
+                                                            <div class="size-9 shrink-0">
+                                                                <img alt="" class="size-9 rounded-full"
+                                                                     src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80">
+                                                            </div>
+                                                            <div class="ml-4">
+                                                                <div class=" text-slate-700">lindsay.walton@example.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Front-end
+                                                        Developer
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">
+                                                        lindsay.walton@example.com
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Member</td>
+                                                    <td class="relative py-4 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
+
+                                                        <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+                                                        <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+                                                        <el-dropdown class="inline-block">
+                                                            <button class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-xs inset-ring-1 inset-ring-slate-300 hover:bg-slate-100">
+                                                                Select
+                                                                <svg aria-hidden="true" class="-mr-1 size-5 text-slate-400" data-slot="icon"
+                                                                     fill="currentColor" viewBox="0 0 20 20">
+                                                                    <path clip-rule="evenodd"
+                                                                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" fill-rule="evenodd"/>
+                                                                </svg>
+                                                            </button>
+
+                                                            <el-menu anchor="bottom end" class="w-56 origin-top-right divide-y font-medium text-left divide-slate-100 rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                                                                     popover>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Edit</a>
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Duplicate</a>
+                                                                </div>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Archive</a>
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Move</a>
+                                                                </div>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Share</a>
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Add
+                                                                        to favorites</a>
+                                                                </div>
+                                                                <div class="py-1">
+                                                                    <a class="block px-4 py-2 text-sm text-slate-600 focus:bg-slate-100 focus:text-slate-900 focus:outline-hidden"
+                                                                       href="#">Delete</a>
+                                                                </div>
+                                                            </el-menu>
+                                                        </el-dropdown>
+
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-3 pr-3 pl-4 text-sm whitespace-nowrap sm:pl-0">
+                                                        <div class="flex items-center">
+                                                            <div class="size-9 shrink-0">
+                                                                <img alt="" class="size-9 rounded-full"
+                                                                     src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80">
+                                                            </div>
+                                                            <div class="ml-4">
+                                                                <div class=" text-slate-700">lindsay.walton@example.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Front-end
+                                                        Developer
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">
+                                                        lindsay.walton@example.com
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Member</td>
+                                                    <td class="relative py-4 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
+                                                        <a class="text-indigo-500 hover:text-indigo-700" href="#">Edit<span
+                                                                class="sr-only">, Lindsay Walton</span></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-3 pr-3 pl-4 text-sm whitespace-nowrap sm:pl-0">
+                                                        <div class="flex items-center">
+                                                            <div class="size-9 shrink-0">
+                                                                <img alt="" class="size-9 rounded-full"
+                                                                     src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80">
+                                                            </div>
+                                                            <div class="ml-4">
+                                                                <div class=" text-slate-700">lindsay.walton@example.com</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Front-end
+                                                        Developer
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">
+                                                        lindsay.walton@example.com
+                                                    </td>
+                                                    <td class="px-3 py-4 text-sm whitespace-nowrap text-slate-700">Member</td>
+                                                    <td class="relative py-4 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
+                                                        <a class="text-indigo-500 hover:text-indigo-700" href="#">Edit<span
+                                                                class="sr-only">, Lindsay Walton</span></a>
+                                                    </td>
+                                                </tr>
+                                                <!-- More people... -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-4 sm:px-6 lg:px-8 py-6">
+                <div class="relative flex h-[576px] flex-col overflow-hidden rounded-xl border border-solid border-slate-300 bg-white">
+
+                    <div class="h-full w-full grow lg:flex">
+
+                        <div class="flex-1 xl:flex">
+                            <div class="border-b border-gray-200 px-4 py-6 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0 xl:border-b-0 xl:border-r xl:pl-6">
+                                <x-placeholder message="Left column area">
+                                    <div class="relative h-full overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+                                        <svg fill="none" class="absolute inset-0 size-full stroke-gray-900/10">
+                                            <defs>
+                                                <pattern id="pattern-e65c4c0f-2107-4ff8-8f1a-e4204a4fd15f" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                                                    <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                                                </pattern>
+                                            </defs>
+                                            <rect width="100%" height="100%" stroke="none" fill="url(#pattern-e65c4c0f-2107-4ff8-8f1a-e4204a4fd15f)"></rect>
+                                        </svg>
+                                    </div>
+                                </x-placeholder>
+                            </div>
+
+                            <div class="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
+                                <x-placeholder message="Main area">
+                                    <div class="relative h-full overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+                                        <svg fill="none" class="absolute inset-0 size-full stroke-gray-900/10">
+                                            <defs>
+                                                <pattern id="pattern-7b69d9f9-ca30-48c9-a80a-268e7b084e52" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                                                    <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                                                </pattern>
+                                            </defs>
+                                            <rect width="100%" height="100%" stroke="none" fill="url(#pattern-7b69d9f9-ca30-48c9-a80a-268e7b084e52)"></rect>
+                                        </svg>
+                                    </div>
+                                </x-placeholder>
+                            </div>
+                        </div>
+
+                        <div class="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-96 lg:border-l lg:border-t-0 lg:pr-8 xl:pr-6">
+                            <x-placeholder message="Right column area">
+                                <div class="relative h-full overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+                                    <svg fill="none" class="absolute inset-0 size-full stroke-gray-900/10">
+                                        <defs>
+                                            <pattern id="pattern-1b61a508-0497-4b7f-8a04-44300b5c3e3a" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                                                <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                                            </pattern>
+                                        </defs>
+                                        <rect width="100%" height="100%" stroke="none" fill="url(#pattern-1b61a508-0497-4b7f-8a04-44300b5c3e3a)"></rect>
+                                    </svg>
+                                </div>
+                            </x-placeholder>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+</body>
+
+</html>

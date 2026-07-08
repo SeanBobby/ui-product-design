@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+@theme {
+    --default-font-family: "Inter", SFMono-Regular;
+}
